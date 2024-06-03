@@ -1,8 +1,12 @@
 <script>
 import axios from 'axios';
+import SplashPage from './components/SplashPage.vue'
 
 export default {
   name: 'App',
+  components: {
+    SplashPage
+  },
   data() {
     return {
       characters: [],
@@ -25,9 +29,10 @@ export default {
 </script>
 
 <template>
-  <div v-for="character in characters.data">
+  <SplashPage />
+  <!-- <div v-for="character in characters.data">
     {{ character.name }}
-  </div>
+  </div> -->
 </template>
 
 <style></style>
