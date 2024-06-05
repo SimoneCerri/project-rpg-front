@@ -1,7 +1,7 @@
 <script>
 
 import axios from 'axios';
-import SplashPage from './components/SplashPage.vue'
+import SplashPage from './pages/SplashPage.vue'
 
 export default {
   name: 'App',
@@ -22,7 +22,6 @@ export default {
 
   <AppHeader />
   <main>
-    <SplashPage />
     <RouterView />
   </main>
   <AppFooter />

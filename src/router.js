@@ -3,6 +3,7 @@ import AppHome from "./pages/AppHome.vue";
 import AppCharacters from "./pages/AppCharacters.vue";
 import AppContacts from "./pages/AppContacts.vue";
 import AppAbout from "./pages/AppAbout.vue";
+import SplashPage from './pages/SplashPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -10,6 +11,11 @@ const router = createRouter({
         [
             {
                 path: '/',
+                name: 'splashpage',
+                component: SplashPage,
+            },
+            {
+                path: '/home',
                 name: 'home',
                 component: AppHome,
             },

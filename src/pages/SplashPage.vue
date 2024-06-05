@@ -27,15 +27,13 @@
 
       <div class="center-container blur-in" ref="centerContainer">
         <img src="../../public/boolgard logo white.svg" alt="Logo" class="logo" ref="logo">
-        <a href="#" class="join-button" ref="button">
-          <img src="../../public/gai_1_30.png" alt="Button Image" width="300px">
-          <span class="button-text">JOIN <br>US</span>
-        </a>
+        <router-link to="/home" class="join-button" ref="joinButton">
+          <span class="button-text">JOIN NOW</span>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -51,7 +49,7 @@ export default {
     handleMouseMove(event) {
       const x = event.clientX;
       const y = event.clientY;
-      const elements = [this.$refs.tree1, this.$refs.tree2, this.$refs.logo, this.$refs.button];
+      const elements = [this.$refs.tree1, this.$refs.tree2, this.$refs.logo, this.$refs.joinButton];
       elements.forEach((element, index) => {
         const speed = index < 2 ? 0.03 : 0.1;
         const xOffset = (window.innerWidth / 2 - x) * speed;
@@ -87,7 +85,7 @@ export default {
 
 <style scoped>
 template {
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .splash-page {
@@ -207,26 +205,21 @@ img {
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-
   position: relative;
   cursor: pointer;
-  width: 100px;
+  width: 300px;
+  height: 100px;
+  background-image: url('../../public/gai_1_30.png');
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s ease;
 }
 
 .join-button:hover {
   filter: brightness(1.75);
 }
 
-.join-button img {
-  width: 140%;
-  transition: filter 0.3s ease;
-}
-
-.join-button:hover img {
-  filter: brightness(1.5);
-}
-
-.join-button .button-text {
+.button-text {
   color: #ffffff;
   font-size: 20px;
   font-family: 'Cinzel', serif;
@@ -265,3 +258,4 @@ img {
   right: 10px;
 }
 </style>
+
