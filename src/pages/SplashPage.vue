@@ -27,7 +27,9 @@
 
       <div class="center-container blur-in" ref="centerContainer">
         <img src="../../public/boolgard logo white.svg" alt="Logo" class="logo" ref="logo">
-        <router-link to="/home" class="join-button" ref="joinButton">
+      </div>
+      <div class=" blur-in" ref="centerContainer">
+      <router-link to="/home" class="join-button" ref="joinButton">
           <span class="button-text">JOIN NOW</span>
         </router-link>
       </div>
@@ -205,14 +207,19 @@ img {
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
-  width: 300px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-image: url('../../public/gai_1_30.png');
   background-size: cover;
   background-position: center;
   transition: filter 0.3s ease;
+  z-index: 10;
+  text-decoration: none;
 }
 
 .join-button:hover {
