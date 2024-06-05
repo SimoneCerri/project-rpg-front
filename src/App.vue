@@ -1,8 +1,13 @@
 <script>
+
 import axios from 'axios';
+import SplashPage from './pages/SplashPage.vue'
 
 export default {
   name: 'App',
+  components: {
+    SplashPage
+  },
   data() {
     return {
       characters: [],
@@ -10,24 +15,17 @@ export default {
       base_characters_url: '/api/characters',
     }
   },
-  methods: {
-    callApi(url) {
-      axios.get(url).then(response => {
-        console.log(response.data.characters);
-        this.characters = response.data.characters;
-      })
-    }
-  },
-  mounted() {
-    this.callApi(this.base_api_url + this.base_characters_url)
-  }
 }
 </script>
 
 <template>
-  <div v-for="character in characters.data">
-    {{ character.name }}
-  </div>
+
+  <AppHeader />
+  <main>
+    <RouterView />
+  </main>
+  <AppFooter />
+
 </template>
 
 <style></style>
